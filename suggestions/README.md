@@ -8,6 +8,6 @@ script) with tests, checks results against a published example, and merges.
 
 Recommendations of theories and frameworks, instruments, and corrections to the
 library go to the HuMeta Instrument Library's repository,
-[humeta-library](https://github.com/JLib271/humeta-library/tree/main/suggestions),
+[humeta-library](https://github.com/stemedplus/humeta-library/tree/main/suggestions),
 and proposed changes to the HuMeta profile to
-[humeta-profile](https://github.com/JLib271/humeta-profile/issues).
+[humeta-profile](https://github.com/stemedplus/humeta-profile/issues).

@@ -29,7 +29,7 @@ Current maintainers are listed in [`.github/CODEOWNERS`](.github/CODEOWNERS).
   labeled `proposal` and left open for comment for at least **14 days**.
 * Changes to the HuMeta profile itself (elements, vocabularies, crosswalks)
   are proposed and released in its own repository,
-  [humeta-profile](https://github.com/JLib271/humeta-profile); `standard/humeta/`
+  [humeta-profile](https://github.com/stemedplus/humeta-profile); `standard/humeta/`
   here is a copy of a release and is not edited directly.
 * Changes to library vocabularies that would rename existing variables or
   codes are not allowed once data may exist; add a new entry instead.
@@ -44,7 +44,7 @@ not by one person. Until the committee is formed, every mapping in the library
 is marked `provisional`. Researchers always decide whether an instrument fits
 their own construct; the library shows mappings as candidates with their
 status. Recommendations are reviewed in the library's repository; see
-[humeta-library's suggestions/README.md](https://github.com/JLib271/humeta-library/blob/main/suggestions/README.md).
+[humeta-library's suggestions/README.md](https://github.com/stemedplus/humeta-library/blob/main/suggestions/README.md).
 
 ## Becoming a maintainer or curator
 

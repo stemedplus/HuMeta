@@ -10,7 +10,7 @@ Generated (don't edit): schema/humeta-record.schema.json, elements.md,
                         crosswalks/alignments.csv, crosswalks/ddi.csv,
                         examples/*.datacite.json, examples/*.datacite.xml
 
-The profile's source of truth is its own repository, https://github.com/JLib271/humeta-profile;
+The profile's source of truth is its own repository, https://github.com/stemedplus/humeta-profile;
 standard/humeta/ here is a copy of a released version (see scripts/update_profile.py). To regenerate
 the derived files in a checkout of humeta-profile, pass --profile-dir.
 
@@ -130,7 +130,7 @@ def build(base: Path = BASE) -> dict[Path, str]:
             lines.append(f"| `{t['id']}` | {t['label']} | {eric} |")
         lines.append("")
     lines += ["### <a id=\"constructs\"></a>Constructs", "",
-              "Defined in the HuMeta Instrument Library's [`constructs.json`](https://github.com/JLib271/humeta-library/blob/main/constructs.json).", "",
+              "Defined in the HuMeta Instrument Library's [`constructs.json`](https://github.com/stemedplus/humeta-library/blob/main/constructs.json).", "",
               "| Code | Label | Definition | ERIC descriptors |", "|---|---|---|---|"]
     for c in lib.constructs.values():
         eric = ", ".join(d + ("" if d in verified else " (unverified)") for d in c.get("eric", []))

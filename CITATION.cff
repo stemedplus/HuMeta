@@ -1,12 +1,12 @@
 cff-version: 1.2.0
-message: "If you use this software, please cite it as below. To cite the HuMeta profile, see https://github.com/JLib271/humeta-profile; the instrument library, https://github.com/JLib271/humeta-library."
+message: "If you use this software, please cite it as below. To cite the HuMeta profile, see https://github.com/stemedplus/humeta-profile; the instrument library, https://github.com/stemedplus/humeta-library."
 title: "HuMeta: The Social Science, Humanities, and Education Study Metadata Profile, and the HuMeta Portal"
 type: software
 authors:
   - family-names: Libarkin
     given-names: Julie C.
     affiliation: Michigan State University
-repository-code: "https://github.com/JLib271/HuMeta"
+repository-code: "https://github.com/stemedplus/HuMeta"
 license: AGPL-3.0-or-later
 keywords:
   - education research

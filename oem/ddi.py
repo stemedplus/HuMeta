@@ -252,7 +252,7 @@ def _construct_concept(b: _Builder, parent: ET.Element, lib: Library, shared_id:
 
 
 METADATA_CODE_VOCAB = "HuMeta metadata code (Construct_Measure_Item_Target)"
-METADATA_CODE_URI = "https://github.com/JLib271/HuMeta/blob/main/oem/metacode.py"
+METADATA_CODE_URI = "https://github.com/stemedplus/HuMeta/blob/main/oem/metacode.py"
 ICPSR_THESAURUS = "ICPSR Subject Thesaurus"
 NATURE = {"ordinal": "ordinal", "categorical": "nominal", "binary": "nominal", "numeric": "interval"}
 

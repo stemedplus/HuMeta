@@ -17,22 +17,22 @@ The platform is deployed on Streamlit Community Cloud.
 
 ## 🛠️ Key Architectural Layout (Modules 1–6)
 
-The modules follow a study from design to sharing. Modules 1 and 2 define the study: what it is, and the theory and measures behind it. Module 3 checks that description and links it to a DOI by registering the study in the STEMEd+ Commons Library. Study metadata uses one standard throughout: the [HuMeta profile](https://github.com/JLib271/humeta-profile), which has its own repository, versions, and public comment; the portal uses release v1.0.0-draft.4 (copy in [`standard/humeta/`](standard/humeta/README.md)). It has a core for every study plus optional field modules for Education, Social Science, and Arts and Humanities, each a starting point to be developed with researchers in those fields. The Social Science module uses DDI, the field's existing standard, and links to a study's full DDI documentation rather than recreating it.
+The modules follow a study from design to sharing. Modules 1 and 2 define the study: what it is, and the theory and measures behind it. Module 3 checks that description and links it to a DOI by registering the study in the STEMEd+ Commons Library. Study metadata uses one standard throughout: the [HuMeta profile](https://github.com/stemedplus/humeta-profile), which has its own repository, versions, and public comment; the portal uses release v1.0.0-draft.4 (copy in [`standard/humeta/`](standard/humeta/README.md)). It has a core for every study plus optional field modules for Education, Social Science, and Arts and Humanities, each a starting point to be developed with researchers in those fields. The Social Science module uses DDI, the field's existing standard, and links to a study's full DDI documentation rather than recreating it.
 
 1. **Describe Your Study (Module 1):** Start by choosing the study's fields (Education, Social sciences, Arts and humanities, or Other field), which sets its research field and adds a short section for each of the first three; the discipline list (ANZSRC 2020 Fields of Research, mapped to the OECD fields DataCite uses) follows. Then describe the study with the HuMeta profile: title and team (with ORCID iDs), research fields and disciplines, design (topic, research questions, study design, unit of analysis, sampling, data collection and analysis methods), people and place (including studies with no participants), sources (texts, archives, images, artworks, media, online content, objects), the field sections (Education: education level, institution type, instructional setting; Social science: kind of data, universe, geographic unit, response rate, weighting, and a link to the study's DDI documentation; Arts and humanities: TaDiRAH research activities, works or objects studied, languages of the sources, editorial or encoding standards), ethics review, consent for participation and for data sharing, identifiability and access, practices for public online data, and Indigenous data governance (CARE). Answers use the profile's controlled vocabularies. The profile describes the study itself, so it can be written while the study is still being designed; it doesn't ask for a DOI, publisher, or publication year. Saving puts the study profile into a **project file** the researcher downloads and keeps; governance fields are researcher-reported and are not approval or sharing determinations.
 2. **Theory and Measures (Module 2):** Theory organizes the module. (1) Choose the framework that guides the study: a theory (e.g., Self-Determination Theory, Social Capital Theory, Framing Theory, Cognitive Load Theory), a theoretical lens (e.g., critical race theory, hermeneutics, material culture studies), your own conceptual framework, or an exploratory/inductive approach. The library of 50 theories and lenses can be browsed by field, kind, and discipline, and searched by name, idea, construct, or author; each shows its constructs and key source before you add it. All theories and lenses are marked **Draft** until experts in each field review them. (2) The framework supplies its constructs, optionally linked to the shared construct list; keep the ones your study addresses and add your own. (3) Give each construct a measure: a library instrument or subscale (shown as candidates with their mapping status; the researcher decides whether one fits, and a governance committee will decide which instruments map to which constructs), researcher-written questions, or codes in a coding scheme for texts, images, media, or interviews. Library instruments can also be searched by name, acronym, author, or what they measure, and added to an existing or new construct. A published instrument that is not in the library is recorded with its name, first author and year, and DOI, so studies using it are matched by DOI; the module can pre-fill a recommendation to add it to the library. (4) Add standard and demographic variables and the timepoints at which measures are repeated. (5) The framework's expected relationships draw the diagram, which you can edit. (6) Review the generated codebook (shared variable names) and save the **variable plan** to the project file. The framework is also recorded in the study profile. Downloads: codebook (CSV/JSON), variable matrix for Module 5, and the diagram. Researchers can opt in to publish a limited study summary. Module 2's **Recommend** tabs are the place to recommend theories, conceptual models, frameworks, and instruments (with an explicit table of what each part of an instrument measures), or to suggest corrections. Each opens a reviewed pull request that adds a structured file to `suggestions/`, and no GitHub account is needed.
 3. **Check, Register & Export (Module 3):** Add the constructs measured (suggested from the variable plan in Module 2, linked to library instruments), check the study profile against the profile's responsible-sharing rules (consent, de-identification, review status, CARE), **register the study** in the STEMEd+ Commons Library's [Studies collection](https://works.hcommons.org/collections/stemedplus-studies) (the deposit, with a readable PDF of the study profile and `humeta.json` attached, gives the study its own DOI, which the project then keeps and later datasets link back to), and export HuMeta JSON, DataCite 4.7 JSON/XML (as a study registration), ERIC Thesaurus descriptors, and **DDI-Codebook 2.5** XML for social science archives (ICPSR, CESSDA, the UK Data Service, Dataverse). The DDI file describes the study and, when a Module 2 variable plan is saved, every variable: label, question text, codes and missing codes, grouped by construct, with each variable naming the construct it measures. It validates against the official DDI-Codebook 2.5.1 schema.
-4. **Deposit Data in the STEMEd+ Commons Library (Module 4):** Data are shared in the STEMEd+ Commons Library's [Data collection](https://works.hcommons.org/collections/stemedplus-data), which gives each deposit a DOI and keeps restricted files restricted; **the portal never receives data**. The module checks that the study profile names its instruments, constructs, and theories, gives the researcher their HuMeta profile (`humeta.json`) to attach to the deposit and the **HuMeta keywords** to add (`humeta:instrument:<id>`, `humeta:construct:<id>`, `humeta:framework:<id>`, `humeta:version:<id>`), which link the deposit even when its files are restricted, and links to the deposit form. The HuMeta Library website reads the collection daily and links each deposit to the instruments, constructs, and theories it used (its [Datasets](https://jlib271.github.io/humeta-library/datasets/) pages).
+4. **Deposit Data in the STEMEd+ Commons Library (Module 4):** Data are shared in the STEMEd+ Commons Library's [Data collection](https://works.hcommons.org/collections/stemedplus-data), which gives each deposit a DOI and keeps restricted files restricted; **the portal never receives data**. The module checks that the study profile names its instruments, constructs, and theories, gives the researcher their HuMeta profile (`humeta.json`) to attach to the deposit and the **HuMeta keywords** to add (`humeta:instrument:<id>`, `humeta:construct:<id>`, `humeta:framework:<id>`, `humeta:version:<id>`), which link the deposit even when its files are restricted, and links to the deposit form. The HuMeta Library website reads the collection daily and links each deposit to the instruments, constructs, and theories it used (its [Datasets](https://stemedplus.github.io/humeta-library/datasets/) pages).
 5. **Descriptive & Scale Analytics (Module 5):** Analyze data by construct, using the variable plan from Module 2. Try example data (shaped like your Module 2 plan, or a built-in sample plan if you have none), or upload a private dataset (held in memory for the browser session only and never saved). Columns are matched to the plan by their shared variable names (adjustable); without a plan you define scales by hand. For each construct and measure, and each timepoint: descriptives, a scale score (mean or sum), and Cronbach's alpha with a 95% confidence interval, corrected item-total correlations, and alpha if item deleted; codes show how often each is present. Then relationships and comparisons: correlations of scale scores (n, r, 95% CI, p); group comparisons (Welch's t-test and Mann-Whitney U for two groups; ANOVA, Welch's ANOVA, Kruskal-Wallis, and Games-Howell follow-ups for three or more); before-and-after comparisons (paired t-test and Wilcoxon signed-rank, with pre/post pairs suggested from the plan's timepoints); chi-square tests of association with Cramér's V; and linear or logistic regression with confidence intervals (and odds ratios). Each test reports an effect size and a plain-language summary. Statistics are computed with [pingouin](https://pingouin-stats.org/) (Vallat, 2018). Downloads: scale scores, results tables, a PDF report, and an R script (psych and base R) that reproduces the analyses, including McDonald's omega and the tests chosen, on the researcher's own computer. Links point to other free tools (R, psych, lavaan, JASP, jamovi), and researchers can recommend analyses for the module.
 6. **Find Related Data (Module 6):** Datasets in the STEMEd+ Commons Library that share instruments, constructs, or theories with the researcher's study, ranked by what they share (from the dataset index the HuMeta Library website publishes, `data/datasets.json`; see `oem/datasets.py`), every dataset in the Data collection, and the study summaries researchers have shared.
 
 ### HuMeta Instrument Library
 
 The instrument library has its own repository,
-**[humeta-library](https://github.com/JLib271/humeta-library)**, for instrument
+**[humeta-library](https://github.com/stemedplus/humeta-library)**, for instrument
 experts and reviewers: the records, the community recommendations waiting for
 review, the validator, and the
-**[HuMeta Library website](https://jlib271.github.io/humeta-library/)** (one
+**[HuMeta Library website](https://stemedplus.github.io/humeta-library/)** (one
 page per instrument, theory or lens, and construct, with search and downloads).
 Module 2 links each instrument and theory to its Library page, and its
 **Recommend** tabs send recommendations there as pull requests.
@@ -57,15 +57,15 @@ python scripts/update_library.py --from ../humeta-library   # a local checkout (
 The site builder in humeta-library uses this repository's `oem/` code (the
 library reader, evidence profiles, and DataCite export), so changes there show up
 on the Library website at its next build. The website used to be at
-`https://jlib271.github.io/HuMeta/`; that address now forwards each page to the
+`https://stemedplus.github.io/HuMeta/`; that address now forwards each page to the
 new one.
 
 The portal runs at https://humeta.streamlit.app/ (`PORTAL_URL` in
 `oem/vocab.py`); the Library pages link to it.
 
 The portal's [privacy policy](PRIVACY.md) and [terms of service](TERMS.md) are
-published at https://jlib271.github.io/HuMeta/privacy/ and
-https://jlib271.github.io/HuMeta/terms/ (built by
+published at https://stemedplus.github.io/HuMeta/privacy/ and
+https://stemedplus.github.io/HuMeta/terms/ (built by
 `scripts/build_library_redirects.py`), and linked from the sidebar and from
 the Google sign-in screen. Update them when what the portal collects or
 publishes changes.
@@ -91,18 +91,18 @@ repository revision as `openscience.py`.
 ## 🤖 Community Recommendations
 Signed-in researchers can recommend, from Module 2, theories and frameworks,
 instruments, corrections, and analyses. Each arrives as a JSON file in
-`suggestions/` of [humeta-library](https://github.com/JLib271/humeta-library), on a
+`suggestions/` of [humeta-library](https://github.com/stemedplus/humeta-library), on a
 new branch with a pull request to its `main`. Proposed changes to the HuMeta
 profile itself (Module 1) open as `proposal` issues in
-[humeta-profile](https://github.com/JLib271/humeta-profile). Maintainers review and merge accepted suggestions;
+[humeta-profile](https://github.com/stemedplus/humeta-profile). Maintainers review and merge accepted suggestions;
 submissions do not update the app's built-in catalog automatically. Contributors
 must confirm that their submission contains no confidential or identifying
 information. Pull requests are public, so do not include participant information,
 private study details, unpublished results, or other sensitive content.
 
 Configure `GITHUB_PAT` as a fine-grained token limited to this repository,
-[humeta-library](https://github.com/JLib271/humeta-library), and
-[humeta-profile](https://github.com/JLib271/humeta-profile), with
+[humeta-library](https://github.com/stemedplus/humeta-library), and
+[humeta-profile](https://github.com/stemedplus/humeta-profile), with
 Contents, Pull requests, and Issues: Read and write permissions. The token
 is stored only in the Streamlit app's secrets and is not shown to researchers.
 The app can only write to `published/study_summaries/` and `suggestions/analyses/`
@@ -170,16 +170,16 @@ button label.
 In Streamlit Community Cloud, open the app's **Settings → Secrets** and add:
 
 ```toml
-# Fine-grained GitHub token limited to this repository, JLib271/humeta-library, and JLib271/humeta-profile:
+# Fine-grained GitHub token limited to this repository, stemedplus/humeta-library, and stemedplus/humeta-profile:
 # Contents: Read and write; Pull requests: Read and write; Issues: Read and write
 # (Issues are for the feedback box here and for profile proposals in humeta-profile)
 GITHUB_PAT = "your-fine-grained-token"
-# Optional; defaults to JLib271/HuMeta (feedback, published summaries and datasets)
-GITHUB_REPO = "JLib271/HuMeta"
-# Optional; defaults to JLib271/humeta-library (recommendations)
-LIBRARY_GITHUB_REPO = "JLib271/humeta-library"
-# Optional; defaults to JLib271/humeta-profile (profile proposals)
-PROFILE_GITHUB_REPO = "JLib271/humeta-profile"
+# Optional; defaults to stemedplus/HuMeta (feedback, published summaries and datasets)
+GITHUB_REPO = "stemedplus/HuMeta"
+# Optional; defaults to stemedplus/humeta-library (recommendations)
+LIBRARY_GITHUB_REPO = "stemedplus/humeta-library"
+# Optional; defaults to stemedplus/humeta-profile (profile proposals)
+PROFILE_GITHUB_REPO = "stemedplus/humeta-profile"
 # Optional: require Google sign-in to send feedback (recommended once the app is public)
 # FEEDBACK_REQUIRES_SIGN_IN = true
 
@@ -199,7 +199,7 @@ server_metadata_url = "https://accounts.google.com/.well-known/openid-configurat
 3. Testers use **Send feedback about this page** at the bottom of any page. Each message becomes a GitHub
    issue labeled `feedback`, with its kind (`feedback: confusing`, `feedback: bug`, …) and page
    (`page: module 2`, …). See them all at
-   [issues labeled feedback](https://github.com/JLib271/HuMeta/issues?q=label%3Afeedback).
+   [issues labeled feedback](https://github.com/stemedplus/HuMeta/issues?q=label%3Afeedback).
 
 For local development, put the same content in `.streamlit/secrets.toml`
 (already git-ignored) and use `http://localhost:8501/oauth2callback` as the
@@ -214,7 +214,7 @@ Supabase is no longer used: remove `SUPABASE_URL`, `SUPABASE_KEY`, and
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/JLib271/HuMeta.git
+   git clone https://github.com/stemedplus/HuMeta.git
    cd HuMeta
    ```
 
@@ -290,6 +290,6 @@ The application code is licensed under the **GNU Affero General Public License, 
 
 Copyright (C) 2026 Julie C. Libarkin. Versions released before this change remain available under the MIT License.
 
-The instrument library is developed at [JLib271/humeta-library](https://github.com/JLib271/humeta-library) and licensed separately: records are CC BY-SA 4.0, and each instrument's item text carries its own license. See [`library/LICENSE.md`](library/LICENSE.md) (the snapshot keeps that license).
+The instrument library is developed at [stemedplus/humeta-library](https://github.com/stemedplus/humeta-library) and licensed separately: records are CC BY-SA 4.0, and each instrument's item text carries its own license. See [`library/LICENSE.md`](library/LICENSE.md) (the snapshot keeps that license).
 
-The HuMeta profile itself is developed at [JLib271/humeta-profile](https://github.com/JLib271/humeta-profile) and licensed CC BY-SA 4.0; the copy in `standard/humeta/` keeps that license. The profile reuses third-party classifications and vocabularies, including the ANZSRC 2020 Fields of Research (CC BY 4.0, ABS and Stats NZ), TaDiRAH (CC0), and the DDI Alliance controlled vocabularies (CC BY 4.0). Their sources, licenses, and HuMeta's changes are listed in [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md).
+The HuMeta profile itself is developed at [stemedplus/humeta-profile](https://github.com/stemedplus/humeta-profile) and licensed CC BY-SA 4.0; the copy in `standard/humeta/` keeps that license. The profile reuses third-party classifications and vocabularies, including the ANZSRC 2020 Fields of Research (CC BY 4.0, ABS and Stats NZ), TaDiRAH (CC0), and the DDI Alliance controlled vocabularies (CC BY 4.0). Their sources, licenses, and HuMeta's changes are listed in [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md).

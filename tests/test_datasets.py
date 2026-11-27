@@ -65,5 +65,5 @@ def test_fetch_index_checks_the_format(monkeypatch):
 
 
 def test_dataset_links_point_at_the_library_and_collection():
-    assert D.dataset_page({"id": "abcde-12345"}) == "https://jlib271.github.io/humeta-library/datasets/abcde-12345/"
+    assert D.dataset_page({"id": "abcde-12345"}) == "https://stemedplus.github.io/humeta-library/datasets/abcde-12345/"
     assert D.DATA_DEPOSIT_URL.endswith("community=stemedplus-data")

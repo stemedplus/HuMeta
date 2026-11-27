@@ -1,9 +1,9 @@
 name: HuMeta pages (policies and old Library address)
 
-# Publishes https://jlib271.github.io/HuMeta/: the HuMeta Portal's privacy policy (privacy/) and terms
+# Publishes https://stemedplus.github.io/HuMeta/: the HuMeta Portal's privacy policy (privacy/) and terms
 # of service (terms/), from PRIVACY.md and TERMS.md, and forwarding for the HuMeta Library website's
-# old address. The Library moved to https://jlib271.github.io/humeta-library/ (built in
-# JLib271/humeta-library); every old page forwards to the same page there.
+# old address. The Library moved to https://stemedplus.github.io/humeta-library/ (built in
+# stemedplus/humeta-library); every old page forwards to the same page there.
 
 on:
   push:

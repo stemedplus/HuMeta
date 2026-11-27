@@ -20,7 +20,7 @@ See [ROADMAP.md](ROADMAP.md) for where the project is heading.
 ## Getting set up
 
 ```bash
-git clone https://github.com/JLib271/HuMeta.git
+git clone https://github.com/stemedplus/HuMeta.git
 cd HuMeta
 python -m venv .venv && source .venv/bin/activate   # Windows: .venv\Scripts\activate
 pip install -r requirements.txt -r requirements-dev.txt
@@ -40,7 +40,7 @@ ruff check --select F,E9 openscience.py oem tests scripts
   `codebook.py`, `vocab.py`). Put new logic here and test it in `tests/`.
 * `oem/app/pages/` holds one file per app module, each with a `render()`
   function. Keep pages thin: they should collect input and call into `oem/`.
-* `library/` is a snapshot of the published [HuMeta Instrument Library](https://github.com/JLib271/humeta-library); change the library there.
+* `library/` is a snapshot of the published [HuMeta Instrument Library](https://github.com/stemedplus/humeta-library); change the library there.
 
 ## Pull request workflow
 
@@ -60,16 +60,16 @@ The easiest way is in the app: **Module 2 → Suggest to the library**, then cho
 a theory or framework, an instrument, or a correction. You sign in, fill in a
 short structured form, and the app opens a pull request for review. You don't
 need a GitHub account. The pull request opens in the
-[HuMeta Instrument Library](https://github.com/JLib271/humeta-library) (analysis
+[HuMeta Instrument Library](https://github.com/stemedplus/humeta-library) (analysis
 recommendations open here, in `suggestions/analyses/`). People who use GitHub
 can use the library's issue forms instead, from the
-[Library website's Recommend page](https://jlib271.github.io/humeta-library/recommend/).
+[Library website's Recommend page](https://stemedplus.github.io/humeta-library/recommend/).
 
 ## Contributing to the instrument library
 
 The library has its own repository,
-[humeta-library](https://github.com/JLib271/humeta-library); see its
-[CONTRIBUTING.md](https://github.com/JLib271/humeta-library/blob/main/CONTRIBUTING.md).
+[humeta-library](https://github.com/stemedplus/humeta-library); see its
+[CONTRIBUTING.md](https://github.com/stemedplus/humeta-library/blob/main/CONTRIBUTING.md).
 `library/` here is a snapshot of the published library: don't edit it here
 (refresh it with `python scripts/update_library.py`).
 

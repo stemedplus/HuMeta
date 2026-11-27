@@ -3,15 +3,15 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 """Build HuMeta's GitHub Pages site: the portal's policies, and forwarding for the old Library address.
 
-The site is https://jlib271.github.io/HuMeta/. It holds:
+The site is https://stemedplus.github.io/HuMeta/. It holds:
 
 * ``privacy/`` and ``terms/``: the HuMeta Portal's privacy policy and terms of
   service, from PRIVACY.md and TERMS.md (linked from the app and from its
   Google sign-in screen).
 * Forwarding for the HuMeta Library website's old address, described below.
 
-The website moved from https://jlib271.github.io/HuMeta/ to
-https://jlib271.github.io/humeta-library/ when the library got its own
+The website moved from https://stemedplus.github.io/HuMeta/ to
+https://stemedplus.github.io/humeta-library/ when the library got its own
 repository. STEMEd+ Commons Library deposits, papers, and DataCite records link to
 the old pages, so this builds a small site for the old address: one forwarding
 page for every record page and the site's other pages (with a canonical link
@@ -64,7 +64,7 @@ def policy_page(markdown_text: str) -> str:
 </main>
 <footer><a href="https://humeta.streamlit.app/">HuMeta Portal</a> ·
 <a href="../privacy/">Privacy</a> · <a href="../terms/">Terms</a> ·
-<a href="https://github.com/JLib271/HuMeta">Source</a></footer>
+<a href="https://github.com/stemedplus/HuMeta">Source</a></footer>
 </body>
 </html>
 """

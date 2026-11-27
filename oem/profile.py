@@ -35,6 +35,9 @@ from oem.vocab import library_page_url
 
 ROOT = Path(__file__).resolve().parent.parent
 PROFILE_DIR = ROOT / "standard" / "humeta"
+# Term URIs and the schema $id are identifiers defined by the HuMeta profile release in standard/humeta/
+# (v1.0.0-draft.4 names JLib271; GitHub forwards those addresses to stemedplus). Change them only together
+# with a profile release that adopts stemedplus URIs, brought in with scripts/update_profile.py.
 CONSTRUCTS_URI = "https://github.com/JLib271/humeta-library/blob/main/constructs.json#"
 FRAMEWORKS_URI = "https://github.com/JLib271/humeta-library/blob/main/frameworks.json#"
 VOCAB_URI = "https://github.com/JLib271/humeta-profile/blob/main/vocabularies.json#"

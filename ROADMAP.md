@@ -8,7 +8,7 @@ their data with common names and metadata, and sharing data responsibly.
 
 - Instrument library with constructs, versions, evidence, item crosswalks, and
   licensed item text, now in its own repository,
-  [humeta-library](https://github.com/JLib271/humeta-library), which the portal reads from its website
+  [humeta-library](https://github.com/stemedplus/humeta-library), which the portal reads from its website
 - Shared response scales, standard variables (including the US federal
   government's 2024 race/ethnicity standard, OMB SPD 15), and variable-naming rules (`oem/naming.py`)
 - Codebook builder with CSV/JSON export (`oem/codebook.py`)
@@ -28,7 +28,7 @@ their data with common names and metadata, and sharing data responsibly.
 0. **HuMeta profile 1.0.** Public comment (including CARE review by Indigenous data governance experts),
    persistent term URIs, DOI, and society endorsements
    (see `standard/humeta/endorsement/`). The profile now has its own repository,
-   [humeta-profile](https://github.com/JLib271/humeta-profile), with tagged releases; comment happens
+   [humeta-profile](https://github.com/stemedplus/humeta-profile), with tagged releases; comment happens
    in its issues, and the portal moves to each release with `scripts/update_profile.py`.
 0b. **Field modules and a broader core.** Working groups for the Social Science module (done: DDI-based
    fields, a link to the study's DDI record, and DDI-Codebook 2.5 export; next: ELSST topics, and a
@@ -59,7 +59,7 @@ their data with common names and metadata, and sharing data responsibly.
 ## Good first issues
 
 Library contributions (adding items, resolving `needs_check`, response scales) now live in
-[humeta-library](https://github.com/JLib271/humeta-library).
+[humeta-library](https://github.com/stemedplus/humeta-library).
 
 - Propose a standard `gender` variable (needs community discussion; there is
   no settled US federal standard to follow)

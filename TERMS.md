@@ -5,13 +5,13 @@
 These terms apply to the HuMeta Portal (https://humeta.streamlit.app/), an
 open-source project maintained by Julie C. Libarkin. By using the portal you
 agree to them. How we handle information is described in the
-[privacy policy](https://jlib271.github.io/HuMeta/privacy/).
+[privacy policy](https://stemedplus.github.io/HuMeta/privacy/).
 
 ## The service
 
 The portal is free to use and is provided to support research. Its code is
 open source under the
-[GNU Affero General Public License v3.0 or later](https://github.com/JLib271/HuMeta/blob/main/LICENSE).
+[GNU Affero General Public License v3.0 or later](https://github.com/stemedplus/HuMeta/blob/main/LICENSE).
 Features may change, and the portal may be unavailable or discontinued at any
 time.
 
@@ -60,7 +60,7 @@ for any loss or damage arising from your use of the portal.
 ## Contact and changes
 
 For questions, use the HuMeta repository's
-[Security tab](https://github.com/JLib271/HuMeta/security) (**Report a
+[Security tab](https://github.com/stemedplus/HuMeta/security) (**Report a
 vulnerability**) for private matters, or open an
-[issue](https://github.com/JLib271/HuMeta/issues) for anything else. We will
+[issue](https://github.com/stemedplus/HuMeta/issues) for anything else. We will
 post changes to these terms here, with a new effective date.

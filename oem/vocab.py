@@ -13,13 +13,13 @@ from pathlib import Path
 APP_DIR = Path(__file__).resolve().parent.parent
 PUBLISHED_DIR = APP_DIR / "published"
 PUBLISHED_SUMMARIES_DIR = PUBLISHED_DIR / "study_summaries"
-DEFAULT_GITHUB_REPO = "JLib271/HuMeta"
+DEFAULT_GITHUB_REPO = "stemedplus/HuMeta"
 #: The HuMeta Instrument Library's repository: recommendations (suggestions/) go there
-DEFAULT_LIBRARY_REPO = "JLib271/humeta-library"
+DEFAULT_LIBRARY_REPO = "stemedplus/humeta-library"
 #: The HuMeta profile's repository: proposed changes to the standard go there as issues
-DEFAULT_PROFILE_REPO = "JLib271/humeta-profile"
+DEFAULT_PROFILE_REPO = "stemedplus/humeta-profile"
 #: The HuMeta Library website, built by humeta-library's scripts/build_site.py
-LIBRARY_SITE_URL = "https://jlib271.github.io/humeta-library/"
+LIBRARY_SITE_URL = "https://stemedplus.github.io/humeta-library/"
 #: The deployed HuMeta Portal (Streamlit) app; the Library website links to it
 PORTAL_URL = "https://humeta.streamlit.app/"
 
