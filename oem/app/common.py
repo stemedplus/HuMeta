@@ -366,7 +366,7 @@ def open_review_pull_request(
     folders in ALLOWED_PR_FOLDERS and their file names are sanitized, so
     researcher-entered text cannot write elsewhere in the repository.
     Library recommendations (``LIBRARY_PR_FOLDERS``) go to the library's
-    repository (secret ``LIBRARY_GITHUB_REPO``, default JLib271/humeta-library),
+    repository (secret ``LIBRARY_GITHUB_REPO``, default stemedplus/humeta-library),
     so the ``GITHUB_PAT`` needs access to it as well as to this repository.
     """
     try:
@@ -451,7 +451,7 @@ def _secret_flag(name: str) -> bool:
 def open_profile_proposal(title: str, body: str) -> str:
     """File a proposed change to the HuMeta profile as a `proposal` issue in its repository.
 
-    Goes to the secret PROFILE_GITHUB_REPO (default JLib271/humeta-profile), where proposals stay open
+    Goes to the secret PROFILE_GITHUB_REPO (default stemedplus/humeta-profile), where proposals stay open
     for at least 14 days of comment. Needs sign-in, and a GITHUB_PAT with Issues: Read and write there.
     """
     try:

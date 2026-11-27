@@ -140,8 +140,8 @@ def test_old_website_address_forwards_every_page(tmp_path):
     lib = L.Library.load(L.DEFAULT_LIBRARY_DIR)
     assert count == 5 + len(lib.instruments) + len(lib.frameworks) + len(lib.constructs)
     page = (tmp_path / "instruments" / "gci" / "index.html").read_text(encoding="utf-8")
-    assert 'href="https://jlib271.github.io/humeta-library/instruments/gci/"' in page
-    assert "jlib271.github.io/humeta-library/" in (tmp_path / "404.html").read_text(encoding="utf-8")
+    assert 'href="https://stemedplus.github.io/humeta-library/instruments/gci/"' in page
+    assert "stemedplus.github.io/humeta-library/" in (tmp_path / "404.html").read_text(encoding="utf-8")
 
 
 def test_policy_pages_are_published(tmp_path):

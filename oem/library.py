@@ -4,7 +4,7 @@
 
 The library is the single source of truth for instruments, items, constructs,
 frameworks (theories and lenses), response scales and standard variables. It is
-kept in its own repository, https://github.com/JLib271/humeta-library, whose
+kept in its own repository, https://github.com/stemedplus/humeta-library, whose
 website publishes the library's files as ``data/library.tar.gz``. Load it once
 and look things up by ID::
 
@@ -38,7 +38,7 @@ from typing import Any
 #: The snapshot of the library kept with the app
 DEFAULT_LIBRARY_DIR = Path(__file__).resolve().parent.parent / "library"
 #: Where the HuMeta Library website publishes library.json and library.tar.gz
-PUBLISHED_DATA_URL = "https://jlib271.github.io/humeta-library/data/"
+PUBLISHED_DATA_URL = "https://stemedplus.github.io/humeta-library/data/"
 #: Library.load() with no folder reads this; None means the snapshot
 _default_root: Path | None = None
 

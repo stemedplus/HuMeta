@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 """Keep standard/humeta/ in step with a released version of the HuMeta profile.
 
-The profile lives in its own repository, https://github.com/JLib271/humeta-profile.
+The profile lives in its own repository, https://github.com/stemedplus/humeta-profile.
 The portal uses one released version of it, named in humeta-profile.json at the
 top of this repository, and keeps a copy of that release in standard/humeta/
 (everything in the release except .github/). Do not edit standard/humeta/ here:

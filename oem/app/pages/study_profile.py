@@ -72,7 +72,7 @@ def render(*, signed_in: bool, publish_disabled: bool, publish_hint: str | None)
     st.markdown("---")
     st.markdown("### Propose a change to the HuMeta profile")
     st.caption("Suggest a new element, a vocabulary term, or a clearer definition. Your proposal opens as an issue "
-               "in the [HuMeta profile's repository](https://github.com/JLib271/humeta-profile), where it stays open "
+               "in the [HuMeta profile's repository](https://github.com/stemedplus/humeta-profile), where it stays open "
                "for comment for at least 14 days; do not include confidential study details.")
     with st.expander("Draft a proposal"):
         public_submission_warning()

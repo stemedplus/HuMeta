@@ -17,8 +17,8 @@ from oem import profile
 from oem.app.common import current_project
 from oem.library import Library
 
-SPEC_URL = "https://github.com/JLib271/humeta-profile/blob/main/README.md"
-ISSUES_URL = "https://github.com/JLib271/HuMeta/issues"
+SPEC_URL = "https://github.com/stemedplus/humeta-profile/blob/main/README.md"
+ISSUES_URL = "https://github.com/stemedplus/HuMeta/issues"
 DDI_URL = "https://ddialliance.org/"
 TADIRAH_URL = "https://vocabs.dariah.eu/tadirah/"
 #: starting choice in Module 1: field module -> button label, and the research field it adds

@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 """Refresh library/, the portal's snapshot of the HuMeta Instrument Library.
 
-The library lives in https://github.com/JLib271/humeta-library. Its website
+The library lives in https://github.com/stemedplus/humeta-library. Its website
 publishes the library's files as data/library.tar.gz, described by
 data/library.json; the app reads that at startup (oem.library.use_published).
 library/ is a copy of one published archive, used by the tests and as the

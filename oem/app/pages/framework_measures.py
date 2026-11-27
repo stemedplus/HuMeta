@@ -945,8 +945,8 @@ def _share(lib, plan: dict, book, publish_disabled: bool, publish_hint: str | No
 def _submission_notice() -> None:
     public_submission_warning()
     st.caption("Your name from sign-in appears on the submission. Theory, instrument, and correction recommendations "
-               "open as pull requests in the [HuMeta Instrument Library](https://github.com/JLib271/humeta-library), "
-               "and analysis recommendations in the [portal's repository](https://github.com/JLib271/HuMeta). A "
+               "open as pull requests in the [HuMeta Instrument Library](https://github.com/stemedplus/humeta-library), "
+               "and analysis recommendations in the [portal's repository](https://github.com/stemedplus/HuMeta). A "
                "maintainer checks the source before adding anything.")
 
 

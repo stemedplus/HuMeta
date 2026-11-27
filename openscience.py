@@ -105,8 +105,8 @@ with st.sidebar:
         )
         if st.button("Sign in with Google", use_container_width=True, type="primary"):
             st.login()
-    st.caption("[Privacy policy](https://jlib271.github.io/HuMeta/privacy/) · "
-               "[Terms of service](https://jlib271.github.io/HuMeta/terms/)")
+    st.caption("[Privacy policy](https://stemedplus.github.io/HuMeta/privacy/) · "
+               "[Terms of service](https://stemedplus.github.io/HuMeta/terms/)")
 
     st.divider()
     st.caption("💬 Trying the app? Use **Send feedback about this page** at the bottom of any page. "
@@ -116,7 +116,7 @@ with st.sidebar:
     st.divider()
     st.caption(
         "Free software under the [GNU AGPL v3](https://www.gnu.org/licenses/agpl-3.0.html). "
-        "[Source code](https://github.com/JLib271/HuMeta)"
+        "[Source code](https://github.com/stemedplus/HuMeta)"
     )
 
 st.title("🔬 HuMeta Portal")

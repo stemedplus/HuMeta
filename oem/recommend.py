@@ -6,7 +6,7 @@ Researchers recommend theories, lenses, and frameworks, or instruments for
 measuring constructs, from Module 2 (or through GitHub issue forms). Each
 recommendation becomes one JSON file in ``suggestions/<kind>/`` on a pull
 request. Theories, instruments, and corrections go to the HuMeta Instrument
-Library's repository (JLib271/humeta-library), reviewed against its
+Library's repository (stemedplus/humeta-library), reviewed against its
 ``suggestions/README.md`` before anything is added to the library; analyses
 (for Module 5) stay in this repository's ``suggestions/analyses/``.
 

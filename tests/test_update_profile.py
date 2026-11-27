@@ -28,7 +28,7 @@ def release(tmp_path, monkeypatch):
 
 def test_lock_names_a_tagged_release():
     lock = json.loads((ROOT / "humeta-profile.json").read_text())
-    assert lock["repository"] == "JLib271/humeta-profile"
+    assert lock["repository"] == "stemedplus/humeta-profile"
     assert lock["version"].startswith("v")
 
 

@@ -4,7 +4,7 @@
 
 The HuMeta Portal (https://humeta.streamlit.app/) helps researchers describe,
 plan, and share studies. It is an open-source project maintained by Julie C.
-Libarkin; its code is public at https://github.com/JLib271/HuMeta. This policy
+Libarkin; its code is public at https://github.com/stemedplus/HuMeta. This policy
 explains what information the portal handles and what happens to it.
 
 **In short:** you can use the portal without signing in, and we do not keep
@@ -53,10 +53,10 @@ repository for review:
 
 | You submit | It goes to |
 |---|---|
-| Recommendations of theories, instruments, or corrections | [humeta-library](https://github.com/JLib271/humeta-library) (pull request) |
-| Proposed changes to the HuMeta metadata profile | [humeta-profile](https://github.com/JLib271/humeta-profile) (issue) |
-| Analysis recommendations and study summaries | [HuMeta](https://github.com/JLib271/HuMeta) (pull request) |
-| Feedback from the "Send feedback" box | [HuMeta](https://github.com/JLib271/HuMeta) (issue) |
+| Recommendations of theories, instruments, or corrections | [humeta-library](https://github.com/stemedplus/humeta-library) (pull request) |
+| Proposed changes to the HuMeta metadata profile | [humeta-profile](https://github.com/stemedplus/humeta-profile) (issue) |
+| Analysis recommendations and study summaries | [HuMeta](https://github.com/stemedplus/HuMeta) (pull request) |
+| Feedback from the "Send feedback" box | [HuMeta](https://github.com/stemedplus/HuMeta) (issue) |
 
 A submission, with your name if you were signed in, is **public as soon as it
 is submitted** and stays in the repository's history. Maintainers can remove
@@ -88,11 +88,11 @@ The portal is meant for researchers and is not directed to children.
 ## Contact
 
 Use GitHub's private reporting: go to the HuMeta repository's
-[Security tab](https://github.com/JLib271/HuMeta/security) and choose
+[Security tab](https://github.com/stemedplus/HuMeta/security) and choose
 **Report a vulnerability**. Please do not post sensitive details in a public
 issue.
 
 ## Changes
 
 We will post any changes to this policy here, with a new effective date.
-Earlier versions are in the [repository's history](https://github.com/JLib271/HuMeta/commits/main/PRIVACY.md).
+Earlier versions are in the [repository's history](https://github.com/stemedplus/HuMeta/commits/main/PRIVACY.md).
