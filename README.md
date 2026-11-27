@@ -67,7 +67,7 @@ The portal's [privacy policy](PRIVACY.md) and [terms of service](TERMS.md) are
 published at https://stemedplus.github.io/HuMeta/privacy/ and
 https://stemedplus.github.io/HuMeta/terms/ (built by
 `scripts/build_library_redirects.py`), and linked from the sidebar and from
-the Google, ORCID, and Microsoft sign-in screens (give these URLs when registering each app). Update them when what the portal collects or
+the Google and ORCID sign-in screens (give these URLs when registering each app). Update them when what the portal collects or
 publishes changes.
 
 ### Research measure catalog
@@ -134,14 +134,14 @@ remains in git history even if it is later removed.
 
 ---
 
-## 🔐 Researcher sign-in (Google, ORCID, Microsoft)
+## 🔐 Researcher sign-in (Google, ORCID)
 
 Every module works without signing in. Signing in is required to submit items
 for review (study summaries, public datasets, suggestions), and to send feedback
 when `FEEDBACK_REQUIRES_SIGN_IN` is on, so that each submission is tied to a real
-account. Researchers sign in with **Google**, **ORCID**, or **Microsoft** (work,
-school, or personal accounts; many universities use Microsoft 365), through
-Streamlit's built-in OpenID Connect sign-in. Each provider set up in the secrets
+account. Researchers sign in with **Google** (including university Google
+Workspace accounts) or **ORCID**, through Streamlit's built-in OpenID Connect
+sign-in. Each provider set up in the secrets
 gets its own button; a provider left out is simply not offered. Pull requests
 show the submitter's display name and a short hashed account reference, never
 an email address. ORCID doesn't share email addresses at all; it sends the
@@ -174,29 +174,6 @@ about 10 minutes). Every provider needs the redirect URI
 2. Copy the client ID (`APP-…`) and secret into `[auth.orcid]`. ORCID offers only
    the `openid` scope and expects the secret in the request body, so keep the
    `client_kwargs` shown below.
-
-**Microsoft**
-
-1. In the [Microsoft Entra admin center](https://entra.microsoft.com/), open
-   **App registrations → New registration**. Under supported account types choose
-   **Accounts in any organizational directory and personal Microsoft accounts**,
-   and add the redirect URI as a **Web** platform.
-2. Under **Certificates & secrets**, create a client secret and copy its
-   **value**. Secrets expire (at most 24 months): note the date and renew it.
-3. Copy the **Application (client) ID** and the secret into `[auth.microsoft]`,
-   with Microsoft's `common` endpoint as shown below.
-4. **Publisher verification.** Many universities let staff approve only apps from
-   verified publishers; with an unverified app, their staff see "Need admin
-   approval" and can't sign in. Verify the publisher under **Branding & properties**
-   (it needs a Microsoft AI Cloud Partner Program ID, free, and a verified domain),
-   or ask a university's IT to grant consent for the app.
-
-The `common` endpoint describes its issuer as a template, which Streamlit's sign-in
-library would otherwise reject for every account (Streamlit issue
-[#11391](https://github.com/streamlit/streamlit/issues/11391)); `oem/auth.py` accepts
-an issuer naming the account's own tenant instead. If you point Microsoft at one
-university's tenant (`/<tenant-id>/v2.0/...`), only that university's accounts can
-sign in and the fix isn't used.
 
 Without an `[auth]` section the app still runs; only submissions are disabled. An
 older setup with Google's settings written directly in `[auth]` still works and
@@ -237,11 +214,6 @@ client_id = "APP-XXXXXXXXXXXXXXXX"
 client_secret = "..."
 server_metadata_url = "https://orcid.org/.well-known/openid-configuration"
 client_kwargs = { scope = "openid", prompt = "login", token_endpoint_auth_method = "client_secret_post" }
-
-[auth.microsoft]
-client_id = "00000000-0000-0000-0000-000000000000"
-client_secret = "..."
-server_metadata_url = "https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration"
 ```
 
 ### Sharing the app with testers
@@ -250,7 +222,7 @@ server_metadata_url = "https://login.microsoftonline.com/common/v2.0/.well-known
 2. While the repository is private, the app is private too. Invite testers from the app's **Share** button by
    email; Streamlit lets them in with Google or a one-time emailed link. That only opens the app: to submit
    anything (or send feedback, with `FEEDBACK_REQUIRES_SIGN_IN`), they also sign in from the sidebar with
-   Google, ORCID, or Microsoft. No GitHub account is needed.
+   Google or ORCID. No GitHub account is needed.
 3. Testers use **Send feedback about this page** at the bottom of any page. Each message becomes a GitHub
    issue labeled `feedback`, with its kind (`feedback: confusing`, `feedback: bug`, …) and page
    (`page: module 2`, …). See them all at

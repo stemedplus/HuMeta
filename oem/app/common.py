@@ -27,7 +27,7 @@ from oem.vocab import (APP_DIR, DEFAULT_GITHUB_REPO, DEFAULT_LIBRARY_REPO, DEFAU
 #   only after a maintainer merges, and the deployed app reads them from disk.
 
 def sign_in_providers() -> list[auth.Provider]:
-    """The sign-in providers (Google, ORCID, Microsoft) set up in this deployment's secrets."""
+    """The sign-in providers (Google, ORCID) set up in this deployment's secrets."""
     try:
         return auth.configured_providers(st.secrets.get("auth"))
     except Exception:

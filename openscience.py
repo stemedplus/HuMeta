@@ -10,7 +10,6 @@ from __future__ import annotations
 import streamlit as st
 import json
 from oem.app.common import (ABOUT, PARTS, scroll_to_top_on_new_module, auth_is_configured, render_feedback_box, current_project, empty_project, navigate_to_module, parse_project_file, render_project_download, render_value_card, researcher_display_name, researcher_sign_in_label, sign_in_providers, STUDY_PATH, researcher_is_signed_in, use_published_library, value_propositions)
-from oem.auth import allow_microsoft_multitenant_issuer
 from oem.app.pages import (
     analytics,
     data_repository,
@@ -19,9 +18,6 @@ from oem.app.pages import (
     published_viewer,
     study_profile,
 )
-
-# Before any sign-in callback: let Microsoft sign-in accept accounts from any university (see oem/auth.py).
-allow_microsoft_multitenant_issuer()
 
 
 # Storage model (no database):
@@ -107,7 +103,7 @@ with st.sidebar:
         st.caption(
             f"Sign in with {', '.join(p.label for p in providers[:-1]) + ', or ' if len(providers) > 1 else ''}"
             f"{providers[-1].label} to send feedback, study summaries, or recommendations for review. "
-            "A university Google or Microsoft account works."
+            "A university Google account works."
         )
         for provider in providers:
             if st.button(f"Sign in with {provider.label}", key=f"sign_in_{provider.key or 'default'}",
