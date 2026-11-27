@@ -1,10 +1,10 @@
 # HuMeta Portal terms of service
 
-*Effective November 14, 2026*
+*Effective November 27, 2026*
 
 These terms apply to the HuMeta Portal (https://humeta.streamlit.app/), an
-open-source project maintained by Julie C. Libarkin. By using the portal you
-agree to them. How we handle information is described in the
+open-source project of STEMEd+, maintained by Julie C. Libarkin. By using the
+portal you agree to them and to the STEMEd+ Code of Conduct. How we handle information is described in the
 [privacy policy](https://jlib271.github.io/HuMeta/privacy/).
 
 ## The service

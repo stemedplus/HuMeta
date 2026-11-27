@@ -1,11 +1,13 @@
 # HuMeta Portal privacy policy
 
-*Effective November 14, 2026*
+*Effective November 27, 2026*
 
 The HuMeta Portal (https://humeta.streamlit.app/) helps researchers describe,
-plan, and share studies. It is an open-source project maintained by Julie C.
-Libarkin; its code is public at https://github.com/JLib271/HuMeta. This policy
-explains what information the portal handles and what happens to it.
+plan, and share studies. It is an open-source project of STEMEd+, maintained
+by Julie C. Libarkin; its code is public at https://github.com/JLib271/HuMeta.
+This policy explains what information the portal handles and what happens to
+it. It adds to the STEMEd+ privacy policy, which also applies; where the two
+differ for the portal, this policy describes what the portal actually does.
 
 **In short:** you can use the portal without signing in, and we do not keep
 the files you work with. If you sign in, we use your name to credit what you

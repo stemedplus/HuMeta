@@ -1,9 +1,10 @@
 # HuMeta Portal 🔬🌐
 
-An open-source, community-driven web app that helps researchers in the **social sciences, humanities, and education** describe, align, and share study metadata using one open standard, **HuMeta: The Social Science, Humanities, and Education Study Metadata Profile**. It runs on Streamlit Community Cloud with **no database**: private work stays with the researcher, and public records live in this GitHub repository after maintainer review.
+An open-source, community-driven web app from **STEMEd+** that helps researchers in the **social sciences, humanities, and education** describe, align, and share study metadata using one open standard, **HuMeta: The Social Science, Humanities, and Education Study Metadata Profile**. It runs on Streamlit Community Cloud with **no database**: private work stays with the researcher, and public records live in this GitHub repository after maintainer review.
 
 ## 🤝 Community
 
+HuMeta is a project of STEMEd+ and follows the STEMEd+ governance documents, Code of Conduct, and privacy policy; HuMeta's own documents below add what is specific to HuMeta.
 The project is open source and welcomes contributors: researchers drafting field modules or adding instruments, librarians and data curators, and developers.
 Start with [CONTRIBUTING.md](CONTRIBUTING.md) and the [ROADMAP.md](ROADMAP.md). We follow a [Code of Conduct](CODE_OF_CONDUCT.md);
 see [GOVERNANCE.md](GOVERNANCE.md) for how decisions are made and [SECURITY.md](SECURITY.md) to report security or privacy problems.
@@ -11,7 +12,7 @@ To cite the project, use [CITATION.cff](CITATION.cff).
 
 ## 🔗 Live Application Access
 The platform is deployed on Streamlit Community Cloud.
-👉 **HuMeta Portal:** _link to be added — replace this line with the app's `*.streamlit.app` URL._
+👉 **HuMeta Portal:** https://humeta.streamlit.app/
 
 ---
 
