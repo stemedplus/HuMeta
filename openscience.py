@@ -9,7 +9,8 @@ shared helpers in ``oem/app/common.py``; Streamlit-free logic in ``oem/``.
 from __future__ import annotations
 import streamlit as st
 import json
-from oem.app.common import (ABOUT, PARTS, scroll_to_top_on_new_module, auth_is_configured, render_feedback_box, current_project, empty_project, navigate_to_module, parse_project_file, render_project_download, render_value_card, researcher_display_name, STUDY_PATH, researcher_is_signed_in, use_published_library, value_propositions)
+from oem.app.common import (ABOUT, PARTS, scroll_to_top_on_new_module, auth_is_configured, render_feedback_box, current_project, empty_project, navigate_to_module, parse_project_file, render_project_download, render_value_card, researcher_display_name, researcher_sign_in_label, sign_in_providers, STUDY_PATH, researcher_is_signed_in, use_published_library, value_propositions)
+from oem.auth import allow_microsoft_multitenant_issuer
 from oem.app.pages import (
     analytics,
     data_repository,
@@ -18,6 +19,9 @@ from oem.app.pages import (
     published_viewer,
     study_profile,
 )
+
+# Before any sign-in callback: let Microsoft sign-in accept accounts from any university (see oem/auth.py).
+allow_microsoft_multitenant_issuer()
 
 
 # Storage model (no database):
@@ -95,16 +99,20 @@ with st.sidebar:
             "except submitting items for public listing."
         )
     elif signed_in:
-        st.caption(f"Signed in as {researcher_display_name()}")
+        st.caption(f"Signed in with {researcher_sign_in_label()} as {researcher_display_name()}")
         if st.button("Sign out", use_container_width=True):
             st.logout()
     else:
+        providers = sign_in_providers()
         st.caption(
-            "Sign in with a Google account (including university Google accounts) to submit study summaries, "
-            "public datasets, or suggestions for review."
+            f"Sign in with {', '.join(p.label for p in providers[:-1]) + ', or ' if len(providers) > 1 else ''}"
+            f"{providers[-1].label} to send feedback, study summaries, or recommendations for review. "
+            "A university Google or Microsoft account works."
         )
-        if st.button("Sign in with Google", use_container_width=True, type="primary"):
-            st.login()
+        for provider in providers:
+            if st.button(f"Sign in with {provider.label}", key=f"sign_in_{provider.key or 'default'}",
+                         use_container_width=True, type="primary"):
+                st.login(provider.key)
     st.caption("[Privacy policy](https://stemedplus.github.io/HuMeta/privacy/) · "
                "[Terms of service](https://stemedplus.github.io/HuMeta/terms/)")
 
@@ -154,7 +162,7 @@ st.markdown("---")
 publish_disabled = not signed_in
 publish_hint = (
     None if signed_in
-    else "Sign in with Google (sidebar) to submit this for maintainer review."
+    else "Sign in (sidebar) to submit this for maintainer review."
 )
 
 PAGES = {

@@ -13,7 +13,7 @@ import time
 import uuid
 from pathlib import Path
 from github import Github
-from oem import feedback
+from oem import auth, feedback
 from oem import library as library_source
 from oem.vocab import (APP_DIR, DEFAULT_GITHUB_REPO, DEFAULT_LIBRARY_REPO, DEFAULT_PROFILE_REPO, LEGACY_PROJECT_FILE_FORMATS, PROJECT_FILE_FORMAT, PUBLISHED_SUMMARIES_DIR)
 
@@ -26,12 +26,17 @@ from oem.vocab import (APP_DIR, DEFAULT_GITHUB_REPO, DEFAULT_LIBRARY_REPO, DEFAU
 #   published/. Researchers submit them as pull requests; they become public
 #   only after a maintainer merges, and the deployed app reads them from disk.
 
-def auth_is_configured() -> bool:
-    """True when an [auth] section (Google OpenID Connect) exists in secrets."""
+def sign_in_providers() -> list[auth.Provider]:
+    """The sign-in providers (Google, ORCID, Microsoft) set up in this deployment's secrets."""
     try:
-        return "auth" in st.secrets
+        return auth.configured_providers(st.secrets.get("auth"))
     except Exception:
-        return False
+        return []
+
+
+def auth_is_configured() -> bool:
+    """True when at least one sign-in provider is set up in the secrets' [auth] section."""
+    return bool(sign_in_providers())
 
 
 def researcher_is_signed_in() -> bool:
@@ -39,8 +44,13 @@ def researcher_is_signed_in() -> bool:
 
 
 def researcher_display_name() -> str:
-    name = str(st.user.get("name") or "").strip() if researcher_is_signed_in() else ""
+    name = auth.display_name(st.user) if researcher_is_signed_in() else ""
     return name or "Signed-in researcher"
+
+
+def researcher_sign_in_label() -> str:
+    """Which provider the researcher signed in with, e.g. 'ORCID' ('' when not signed in)."""
+    return auth.provider_label(st.user.get("provider")) if researcher_is_signed_in() else ""
 
 
 def researcher_reference() -> str:
@@ -371,7 +381,7 @@ def open_review_pull_request(
     """
     try:
         if not researcher_is_signed_in():
-            return "❌ Sign in with Google before submitting items for review."
+            return "❌ Sign in (sidebar) before submitting items for review."
         if "GITHUB_PAT" not in st.secrets:
             return "❌ Missing 'GITHUB_PAT' in the app's secrets."
 
@@ -456,7 +466,7 @@ def open_profile_proposal(title: str, body: str) -> str:
     """
     try:
         if not researcher_is_signed_in():
-            return "❌ Sign in with Google before submitting a proposal."
+            return "❌ Sign in (sidebar) before submitting a proposal."
         if "GITHUB_PAT" not in st.secrets:
             return "❌ Missing 'GITHUB_PAT' in the app's secrets."
         repo = Github(str(st.secrets["GITHUB_PAT"]).strip()).get_repo(
@@ -485,7 +495,7 @@ def open_feedback_issue(issue: "feedback.Issue") -> str:
     """
     try:
         if _secret_flag("FEEDBACK_REQUIRES_SIGN_IN") and not researcher_is_signed_in():
-            return "❌ Sign in with Google (sidebar) to send feedback."
+            return "❌ Sign in (sidebar) to send feedback."
         if "GITHUB_PAT" not in st.secrets:
             return "❌ Feedback is not set up for this copy of the app (no GitHub token in its secrets)."
         sent = st.session_state.get("feedback_sent", 0)
@@ -520,6 +530,8 @@ def render_feedback_box(page: str) -> None:
             "needed. Your message goes to the project's issue list on GitHub, where people who can view the "
             "repository can read it. Do not include participant data or anything confidential."
         )
+        if _secret_flag("FEEDBACK_REQUIRES_SIGN_IN") and not researcher_is_signed_in():
+            st.info("Please sign in first (sidebar) to send feedback.")
         with st.form(key=f"feedback_form_{safe_slug(page, 'page', 40)}", clear_on_submit=True):
             kind = st.radio("What kind of feedback?", list(feedback.KINDS), format_func=lambda k: feedback.KINDS[k][0],
                             index=None, key=f"feedback_kind_{page}")

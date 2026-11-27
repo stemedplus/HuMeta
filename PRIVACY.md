@@ -1,6 +1,6 @@
 # HuMeta Portal privacy policy
 
-*Effective November 14, 2026*
+*Effective November 27, 2026*
 
 The HuMeta Portal (https://humeta.streamlit.app/) helps researchers describe,
 plan, and share studies. It is an open-source project maintained by Julie C.
@@ -32,11 +32,15 @@ analyses without an account.
 Please do not upload data that identifies research participants. Use
 de-identified data, as your consent forms and ethics approvals require.
 
-## Signing in with Google
+## Signing in
 
-Signing in is needed only to submit something for public listing (see below).
-When you sign in, Google tells the portal your **name**, **email address**, and
-an **account identifier**. The portal uses them while you are signed in to:
+Signing in is needed to submit something for public listing (see below), and
+may be needed to send feedback. You can sign in with **Google**, **ORCID**, or
+**Microsoft** (including university accounts). The service you choose tells the
+portal your **name** and an **account identifier**; Google and Microsoft also send
+your **email address**. ORCID doesn't send an email address; its account
+identifier is your ORCID iD. The portal uses this information while you are
+signed in to:
 
 * show who is signed in, and
 * credit your submissions with your **name**, plus a short code made by
@@ -72,7 +76,7 @@ the information they handle:
 * **Streamlit Community Cloud** (Snowflake Inc.) hosts the portal and may log
   technical information such as IP addresses and usage, as any website host
   does. See [Streamlit's privacy page](https://streamlit.io/privacy), which points to the Snowflake Privacy Notice.
-* **Google** handles sign-in. See the [Google Privacy Policy](https://policies.google.com/privacy).
+* **Google**, **ORCID**, and **Microsoft** handle sign-in, whichever you choose. See the [Google Privacy Policy](https://policies.google.com/privacy), the [ORCID Privacy Policy](https://info.orcid.org/privacy-policy/), and the [Microsoft Privacy Statement](https://www.microsoft.com/privacy/privacystatement).
 * **GitHub** hosts submissions, the code, and the HuMeta Library website the
   portal reads. See the [GitHub Privacy Statement](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement).
 
